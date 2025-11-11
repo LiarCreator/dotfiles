@@ -1,0 +1,11 @@
+#workspaces {
+    border-radius: 15px;
+    border: 2px solid #B48EAD;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 0px 5px;
+}
+
+#workspaces button {
+    margin-right: 2px;
+}

@@ -1,0 +1,30 @@
+* {
+  font-family: "Fira Code Nerd Font Mono";
+	font-weight: bold;
+	font-size: 14px;
+	color: @main-fg;
+}
+
+#custom-user,
+#window label,
+#mpris,
+tooltip label {
+	font-weight: normal;
+}
+
+#custom-power_menu {
+	font-size: 17px;
+}
+
+#workspaces button.active label,
+#custom-distro {
+	font-size: 16px;
+}
+
+#workspaces {
+  font-size : 14px;
+}
+
+#icon {
+  font-size: 18px;
+}

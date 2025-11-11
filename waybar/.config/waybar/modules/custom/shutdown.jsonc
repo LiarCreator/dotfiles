@@ -1,0 +1,7 @@
+{
+  "custom/shutdown": {
+    "format": "⏻",
+    "on-click": "/home/tie/dotfiles/waybar/.config/waybar/scripts/shutdown.sh",
+    "tooltip": "Shutdown"
+  }
+}

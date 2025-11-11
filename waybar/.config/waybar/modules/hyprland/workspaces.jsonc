@@ -1,0 +1,13 @@
+{
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "terminal": "",
+      "firefox": "\uf269",
+      "music": "\uf001",
+      "discord": "\uf392",
+      "default": "\uf111",
+      "cursor": true
+    }
+  }
+}

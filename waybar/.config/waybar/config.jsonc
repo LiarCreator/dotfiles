@@ -1,0 +1,26 @@
+{
+  "include": [
+    "./modules/custom/power_menu.jsonc",
+    "./modules/custom/system_update.jsonc",
+    "./modules/hyprland/clock.jsonc",
+    "./modules/hyprland/cpu.jsonc",
+    "./modules/hyprland/window.jsonc",
+    "./modules/hyprland/workspaces.jsonc",
+    "./modules/network.jsonc",
+    "./modules/custom/shutdown.jsonc"
+  ],
+  "modules-left": [
+    "group/user",
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock#time"
+  ],
+  "modules-right": [
+    "network",
+    "group/pulseaudio",
+    "cpu",
+    "custom/shutdown"
+  ]
+}
