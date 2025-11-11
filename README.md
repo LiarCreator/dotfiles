@@ -1,123 +1,113 @@
 # Catppuccin Themed Dotfiles
 
-This repository contains my personal dotfiles for a Catppuccin-themed Hyprland installation.
+This repository contains my personal dotfiles for a Catppuccin-themed Hyprland installation. These configurations are managed using `stow`.
 
-## Hyprland
+## Latest Updates
 
-Hyprland is a dynamic tiling Wayland compositor that offers fluid animations, rounded corners, and transparent windows.
+The repository has been completely updated with a new structure and improved configurations. The setup is now more modular and easier to manage.
 
-### File Structure
+## File Structure
 
-```
-hypr/
-└── .config/
-    └── hypr/
-        ├── hyprland.conf
-        └── core/
-            ├── binds.conf
-            ├── default.conf
-            └── looks.conf
-```
-
-- `hyprland.conf`: The main configuration file that sources the other files.
-- `core/binds.conf`: Contains all the keybindings for managing windows, workspaces, and applications.
-- `core/default.conf`: Specifies the default applications to be used (e.g., terminal, browser) and the applications to be executed on startup.
-- `core/looks.conf`: Defines the visual appearance of Hyprland, including gaps, borders, animations, and shadows.
-
-## Neovim
-
-Neovim is a hyperextensible Vim-based text editor.
-
-### File Structure
+The directory is organized by application:
 
 ```
-nvim/
-└── .config/
-    └── nvim/
-        ├── init.lua
-        ├── lazy-lock.json
-        └── lua/
-            └── Tie/
-                ├── init.lua
-                ├── lazy_init.lua
-                ├── map.lua
-                ├── set.lua
-                └── lazy/
-                    ├── autopair.lua
-                    ├── bufferline.lua
-                    ├── cmp.lua
-                    ├── colors.lua
-                    ├── high-color.lua
-                    ├── lsp.lua
-                    ├── lualine.lua
-                    ├── nvimtree.lua
-                    ├── telescope.lua
-                    ├── treesitter.lua
-                    └── whickey.lua
+.
+├── GEMINI.md
+├── README.md
+├── hypr/
+│   └── .config/
+│       └── hypr/
+│           ├── hyprland.conf
+│           └── core/
+│               ├── binds.conf
+│               ├── default.conf
+│               └── looks.conf
+├── nvim/
+│   └── .config/
+│       └── nvim/
+│           ├── init.lua
+│           ├── lazy-lock.json
+│           └── lua/
+│               └── Tie/
+│                   ├── init.lua
+│                   ├── lazy_init.lua
+│                   ├── map.lua
+│                   ├── set.lua
+│                   └── lazy/
+│                       ├── autopair.lua
+│                       ├── bufferline.lua
+│                       ├── cmp.lua
+│                       ├── colors.lua
+│                       ├── high-color.lua
+│                       ├── lsp.lua
+│                       ├── lualine.lua
+│                       ├── nvimtree.lua
+│                       ├── telescope.lua
+│                       ├── treesitter.lua
+│                       └── whickey.lua
+├── starship/
+│   └── .config/
+│       └── starship.toml
+└── waybar/
+    └── .config/
+        └── waybar/
+            ├── config.jsonc
+            ├── style.css
+            ├── theme.css
+            ├── modules/
+            │   ├── network.jsonc
+            │   ├── custom/
+            │   │   ├── power_menu.jsonc
+            │   │   ├── shutdown.jsonc
+            │   │   └── system_update.jsonc
+            │   └── hyprland/
+            │       ├── clock.jsonc
+            │       ├── cpu.jsonc
+            │       ├── window.jsonc
+            │       └── workspaces.jsonc
+            ├── scripts/
+            │   └── shutdown.sh
+            └── styles/
+                ├── modules-center.css
+                ├── modules-left.css
+                ├── modules-right.css
+                ├── states.css
+                ├── typeface.css
+                └── waybar.css
 ```
 
-### Lazy Plugins
+## Neovim Configuration
 
-- [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
-- [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-- [catppuccin/nvim](https://github.com/catppuccin/nvim)
-- [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)
-- [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
-- [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
-- [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-- [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
-- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+Neovim is configured using Lua. The configuration is structured to be modular and easy to maintain. The plugin manager used is `lazy.nvim`.
 
-## Starship
+### Neovim Plugins
 
-Starship is a minimal, blazing-fast, and infinitely customizable prompt for any shell!
+Here is a list of the plugins used in this Neovim configuration:
 
-### File Structure
+-   **[windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)**: Autopairs, integrates with nvim-cmp.
+-   **[akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)**: A snazzy bufferline for Neovim.
+-   **[hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)**: A completion engine plugin for Neovim.
+-   **[L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)**: Snippet engine for Neovim.
+-   **[saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)**: Luasnip completion source for nvim-cmp.
+-   **[rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)**: A set of preconfigured snippets for different languages.
+-   **[folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)**: A clean, dark Neovim theme.
+-   **[catppuccin/nvim](https://github.com/catppuccin/nvim)**: Soothing pastel theme for Neovim.
+-   **[brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)**: Highlight colors in your code.
+-   **[williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)**: Portable package manager for Neovim that runs everywhere Neovim runs.
+-   **[williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)**: Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
+-   **[neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)**: A collection of common configurations for Neovim's built-in LSP.
+-   **[nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)**: A blazing fast and easy to configure statusline for Neovim.
+-   **[nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)**: A file explorer for Neovim.
+-   **[nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)**: A highly extendable fuzzy finder over lists.
+-   **[nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)**: Treesitter configurations and abstraction layer for Neovim.
+-   **[folke/which-key.nvim](https://github.com/folke/which-key.nvim)**: A plugin that shows pending keybindings.
 
+## Installation
+
+To use these dotfiles, you can clone this repository and use `stow` to create symlinks.
+
+```bash
+git clone https://github.com/LiarCreator/dotfiles.git
+cd dotfiles
+stow .
 ```
-starship/
-└── .config/
-    └── starship.toml
-```
-
-- `starship.toml`: The main configuration file for Starship, which defines the prompt's appearance and the information it displays.
-
-## Waybar
-
-Waybar is a highly customizable Wayland bar for Sway and wlroots based compositors.
-
-### File Structure
-
-```
-waybar/
-└── .config/
-    └── waybar/
-        ├── config.jsonc
-        ├── style.css
-        ├── modules/
-        │   ├── custom/
-        │   │   ├── power_menu.jsonc
-        │   │   └── system_update.jsonc
-        │   └── hyprland/
-        │       ├── clock.jsonc
-        │       ├── cpu.jsonc
-        │       ├── window.jsonc
-        │       └── workspaces.jsonc
-        └── styles/
-            ├── modules-center.css
-            ├── modules-left.css
-            ├── modules-right.css
-            ├── states.css
-            ├── typeface.css
-            └── waybar.css
-```
-
-- `config.jsonc`: The main configuration file for Waybar, which defines the modules to be displayed on the bar.
-- `style.css`: The main stylesheet for Waybar, which simply imports all the other style files.
-- `modules/`: This directory contains the configuration for each individual Waybar module.
-- `styles/`: This directory contains the CSS styles for the Waybar modules, allowing for a high degree of customization.
