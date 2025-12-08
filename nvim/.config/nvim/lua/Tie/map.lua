@@ -39,3 +39,11 @@ end, { desc = "Find buffers" })
 vim.keymap.set("n", "<leader>fh", function()
   require("telescope.builtin").help_tags()
 end, { desc = "Help tags" })
+vim.keymap.set('n', 'TE', function()
+    require('telescope.builtin').diagnostics()
+end, { desc = 'Telescope: List project diagnostics' })
+-- Add this to your main keymap setup file
+vim.keymap.set('n', 'E', function()
+    -- Opens a floating window with the diagnostic message for the current line
+    vim.diagnostic.open_float()
+end, { desc = 'Open floating diagnostic window' })

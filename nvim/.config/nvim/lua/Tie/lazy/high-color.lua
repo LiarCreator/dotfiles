@@ -14,7 +14,7 @@ return{
     vim.opt.termguicolors = true -- Make sure this is set
     require('nvim-highlight-colors').setup({
       render = 'background',
-      enable_filetypes = { 'css', 'scss', 'stylus', 'less', 'sass', 'go', 'lua', 'html', 'json', 'yaml', 'hyprlang' },
+      enable_filetypes = { 'css', 'scss', 'stylus', 'less', 'sass', 'go', 'lua', 'html', 'json', 'yaml', 'hyprlang' , 'python'},
     })
   end,
 }
