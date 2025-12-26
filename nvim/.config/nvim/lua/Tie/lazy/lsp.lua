@@ -51,7 +51,17 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				-- A list of language servers to automatically install
-				ensure_installed = { "lua_ls", "jsonls", "cssls", "html", "pyright", "dockerls", "yamlls", "eslint" },
+				ensure_installed = {
+					"lua_ls",
+					"jsonls",
+					"cssls",
+					"html",
+					"pyright",
+					"dockerls",
+					"yamlls",
+					"eslint_d",
+					"vtsls",
+				},
 			})
 		end,
 	},
@@ -68,6 +78,7 @@ return {
 			vim.lsp.config("jsonls", { on_attach = on_attach })
 			vim.lsp.config("cssls", { on_attach = on_attach })
 			vim.lsp.config("html", { on_attach = on_attach })
+			vim.lsp.config("vtsls", { on_attach = on_attach })
 		end,
 	},
 }
